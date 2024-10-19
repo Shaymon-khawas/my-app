@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../Styles/login.css';
-import loginImage1 from './img_1.jpg'; // Update with actual image paths
+import loginImage1 from './img_1.jpg'; 
 import loginImage2 from './img_2.jpg';
 import loginImage3 from './img_3.jpg';
 import loginImage4 from './img_4.jpg';
@@ -18,18 +18,14 @@ const LoginPage = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setIndex((prevIndex) => (prevIndex + 1) % images.length);
-    }, 2000); // Change image every 2 seconds
+    }, 2000); 
 
     return () => clearInterval(interval);
   }, [images.length]);
 
   const handleLogin = (e) => {
     e.preventDefault();
-    if (name.toLowerCase().includes('saksham')) {
-      navigate('/blocked'); 
-    } else {
-      navigate('/welcome'); 
-    }
+    navigate('/welcome'); 
   };
 
   return (
